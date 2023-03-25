@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background-color: #23242a;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+}
+.box{
+    position: relative;
+    right: 50%;
+    width: 320px;
+    height: 420px;
+    background:  #1c1c1c;;
+    border-radius: 8px;
+    inset: 2px;
+    overflow: hidden;
+    align-self: center;
+
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 320px;
+    height: 420px;
+    background:linear-gradient( 0deg,transparent,#45f3ff);
+    transform-origin:bottom right;
+    animation: animate 6s linear infinite ;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 320px;
+    height: 420px;
+    background:linear-gradient( 0deg,transparent,#c1e757);
+    transform-origin:bottom right;
+    animation: animate 6s linear infinite ;
+    animation-delay: -3s;
+}
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.form{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    /* padding: 50px 40px; */
+    flex-direction: column;
+    inset: 2px;
+    z-index: 10;
+    background-color: #1c1c1c;
+    border-radius: 2px;
+    /* margin: 20px ; */
+}
+.form h2{
+    /* position: relative; */
+    padding-top: 20px;
+    /* top: 20px; */
+    color: #45f3ff;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    font-size: 2em;
+    width: 100%;
+}
+ .inputbox{
+    position: relative;
+    /* top:30% */
+    width:270px;
+    margin-top: 30px;
+} 
+
+.inputbox .input1{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 0px 0px ;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:black;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    display: inline-block;
+    z-index: 10;
+    text-align: left;
+
+}
+
+.inputbox span{
+    position: absolute;
+
+    margin: -20px 10px 10px ;
+    left: 0;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    color: #8f8f8f;
+    transition: 0.5s;
+    pointer-events: none;
+    /* width: 100%; */
+
+}
+.inputbox span{
+    transition: 0.5s; 
+}
+.inputbox input:valid ~span,
+.inputbox input:focus ~span{
+   color: #45f3ff;
+   transform:translateX(-10px) translateY(-34px);
+   font-size: 0.75em;
+}
+/* main container that middle all the element is cont...... */
+.cont{
+    position: relative;
+    top: 5%;
+}
+.inputbox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: #45f3ff;
+    width: 100%;
+    transition: 0.5s;
+    border-radius: 4px;
+   
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i{
+   color: #45f3ff;
+   height: 30px;
+
+}
+
+
+.links{
+    display: flex;
+    justify-content: space-between;
+
+}
+.links a{
+    color: #8f8f8f;
+    text-decoration: none;
+    margin: 20px 0px;
+    font-size: 1em;
+}
+.links a:hover,
+.links a:nth-child(2)
+{
+    color: #45f3ff;
+}
+input[type='submit']{
+ 
+    position: relative;
+    background-color: #45f3ff;
+    border: #45f3ff;
+    border-radius: 4px;
+    height: 12%;
+    width: 30%;
+    /* top: 1%; */
+    /* left: 35%; */
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    text-align: center;
+}
+input[type='submit']:active{
+    opacity: 0.5;
+}
+
+.alertcont{
+    display: flex;
+    max-height: 20px;
+    display: inline;
+    align-items: flex-start;
+}
+#alert{
+    position: relative;
+    max-height: 20px;
+}
+.indi{
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ flex-direction: row;
+ position: relative;
+left: 90px;
+top: 10px;
+}
+.id1{
+  color: red;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  margin-left: 2px;
+}
+.id2{
+    color :white;
+    font-size: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    margin-left: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.msg{
+    display: none;
+ 
+}
